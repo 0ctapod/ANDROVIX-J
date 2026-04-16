@@ -1,0 +1,151 @@
+/* Estilos Seccion sostenible */
+
+#seccion-sostenible {
+    background-color: aqua;
+}
+
+/* body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+} */
+
+.hero-section {
+  background-color: #0b0014;
+  overflow: hidden;
+}
+
+.left-content {
+  padding-left: 70px;
+  padding-right: 30px;
+}
+
+.main-title {
+  color: #c9f7ff;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+  letter-spacing: -2px;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.feature-number {
+  color: #ff4df0;
+  font-size: 30px;
+  font-weight: 800;
+  min-width: 36px;
+  line-height: 1;
+}
+
+.feature-title {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #f0e8f2;
+  text-transform: uppercase;
+}
+
+.feature-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: #a99ab6;
+  line-height: 1.5;
+  max-width: 430px;
+}
+
+.right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px 40px 0;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 780px;
+  height: 780px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .left-content {
+    padding: 50px 30px 20px;
+  }
+
+  .main-title {
+    font-size: 58px;
+    margin-bottom: 50px;
+  }
+
+  .right-content {
+    padding: 20px 30px 50px;
+  }
+
+  .image-wrapper {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    height: auto;
+  }
+}
+
+/* Móvil */
+@media (max-width: 575.98px) {
+  .left-content {
+    padding: 40px 20px 20px;
+  }
+
+  .main-title {
+    font-size: 44px;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+  }
+
+  .feature-item {
+    gap: 14px;
+  }
+
+  .feature-number {
+    font-size: 24px;
+  }
+
+  .feature-title {
+    font-size: 15px;
+  }
+
+  .feature-text {
+    font-size: 14px;
+  }
+
+  .right-content {
+    padding: 10px 20px 40px;
+  }
+}

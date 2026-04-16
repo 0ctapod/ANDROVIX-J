@@ -1,0 +1,68 @@
+
+
+/* body {
+    margin: 0;
+    background: #0b0014;
+    font: poppins-thin;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: white;
+} */
+
+/* Contenedor de todo */
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* alinea a la derecha */
+    row-gap: 20px;
+    padding: 20px;
+    gap: 20px;
+    background-color: #0b0014;
+}
+
+/* titulo principal */
+.section h2 {
+    width: 100%;              /* el  titulo debe ir arriba de las cajas*/
+    text-align: right;        /*el titulo queda ubicado a la derecha */
+    color: #ff2bd6;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* cajitas */
+.box {
+    width: 260px;
+    padding: 20px;
+    border-radius: 12px;
+
+    /* fondo tipo tarjeta*/
+    background: rgba(255, 255, 255, 0.05);
+
+    /* borde difuminado */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+/* efecto al pasar el mouse "hover" */
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+/* titulos internos mas pequeños*/
+.box h4 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* texto interno */
+.box p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+}

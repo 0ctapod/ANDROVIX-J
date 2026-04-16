@@ -1,0 +1,167 @@
+:root {
+    --text-shadow: 0 0 30px #9500ff;
+    --box-shadow: 0 0 15px 0 #b731ff;
+    --filter: drop-shadow(0 0 10px #208cff); 
+    --color-a: #c2aeff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !;
+    background-color: #19002a;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: url("Imagenes/fondo.png") center/cover fixed;
+    padding-top: 100px;
+}
+
+/* --------- BARRA DE NAVEGACION --------- */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    display: flex;   
+    justify-content: space-evenly; 
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--box-shadow);  
+    z-index: 1;  
+}
+
+.nav__title {
+    color: #c2aeff;
+    filter: var(--filter);    
+    text-shadow: var(--text-shadow);
+    font-size: 1.8rem;
+}
+
+/* --- BOTON MENU HAMBURGUESA --- */
+.nav__menu {
+    font-size: 2rem;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    box-shadow: var(--box-shadow);
+    color:var(--color-a);
+}
+
+
+/* --- MENU OPCIONES --- */
+.nav__list {
+    list-style: none;
+    gap: 10px;
+    color: #e3e3e3;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.nav__list-icons {
+    display: none;
+    gap: 60px;
+}
+
+.nav__item {
+    color: #e3e3e3;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+    filter: var(--filter); 
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.nav__item:hover {
+    background-color: #9000ff8b;
+    box-shadow: 0 0 15px 0 #b731ff;
+}
+
+
+/* --------- HERO --------- */
+/* .title-hero {
+    margin: 60px 0 15px 70px;
+    font-size: 4rem;
+    color: #e2d8ff;
+    text-shadow: var(--text-shadow);
+    filter: var(--filter);
+} */
+
+.title-hero {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2.7rem;
+    color: #e2d8ff;
+    text-shadow: var(--text-shadow);
+    filter: var(--filter);
+}
+
+/* .hero {
+    width: 60%;
+    backdrop-filter: blur(10px);
+    margin-left: 50px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+} */
+
+.hero {
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.hero__message-box {
+    border-left: 6px solid var(--color-a);
+    padding-left: 30px;
+    border-radius: 2px;
+    filter: drop-shadow(5px 0 10px var(--color-a));
+}
+
+.hero__description {
+    font-size: 1.3rem;
+    color: #e4e4e4;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+}
+
+
+/* --------- DISEÑO RESPONSIVE -------- */
+
+/* Si la pantalla es mayor o igual a 400px solo se cambia el espaciado del flex
+y el tamaño del logo */
+@media screen and (min-width: 400px) {
+    .nav {
+        justify-content: space-evenly;
+    }
+
+    .nav__title {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .nav__list-icons {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1015px) {
+    .nav__list {
+        display: flex;
+    }
+
+    .nav__menu {
+        display: none;
+    }
+}
