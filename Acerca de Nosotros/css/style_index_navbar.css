@@ -13,13 +13,13 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !;
-    background-color: #19002a;
+    background-color: #623281;
 }
 
 header {
     width: 100%;
     height: 100vh;
-    background: url("Imagenes/fondo.png") center/cover fixed;
+    background: url("../Imagenes/Fondo.png") center/cover fixed;
     padding-top: 100px;
 }
 

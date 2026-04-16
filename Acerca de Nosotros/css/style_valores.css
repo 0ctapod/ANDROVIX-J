@@ -1,16 +1,3 @@
-
-
-/* body {
-    margin: 0;
-    background: #0b0014;
-    font: poppins-thin;
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    color: white;
-} */
-
-/* Contenedor de todo */
 .section {
     display: flex;
     flex-wrap: wrap;
