@@ -265,7 +265,7 @@ main {
 
 h2 {
     font-size: 3rem;
-    padding-top: 30px;    
+    padding-top: 30px;
 }
 
 /* ------------ SECCIÓN CONTACTO ------------- */
@@ -286,8 +286,8 @@ h2 {
 
 .contact__title {
     text-align: center;
-    filter: drop-shadow(0 0 10px #208cff);    
-    text-align: center;    
+    filter: drop-shadow(0 0 10px #208cff);
+    text-align: center;
     text-shadow: 0 0 15px var(--color-neon-azul);
     padding-bottom: 20px;
     border-bottom: 1px solid #8bc3ff;
@@ -296,7 +296,7 @@ h2 {
 .contact__form {
     flex-grow: 1;
     flex-basis: 300px;
-    padding: 20px 30px;    
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -358,7 +358,7 @@ h2 {
 }
 
 .icons-text {
-    display: flex;    
+    display: flex;
     gap: 20px;
 }
 
@@ -477,4 +477,69 @@ h2 {
 .lista-footer a:focus-visible {
     color: #ffffff;
     text-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
+}
+
+/* =========================================================
+           ESTILOS DE VALIDACIÓN
+           Mensajes de error y estados visuales para los inputs
+           del formulario de contacto.
+        ========================================================= */
+.campo-error {
+    border-color: var(--color-neon-rosa) !important;
+    box-shadow: 0 0 15px 0 rgba(255, 77, 240, 0.5) !important;
+}
+
+.mensaje-error {
+    display: none;
+    color: var(--color-neon-rosa);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    text-shadow: 0 0 8px rgba(255, 77, 240, 0.6);
+    letter-spacing: 0.04em;
+}
+
+.mensaje-error.visible {
+    display: block;
+}
+
+.campo-valido {
+    border-color: #00ffd0 !important;
+    box-shadow: 0 0 12px 0 rgba(0, 255, 208, 0.35) !important;
+}
+
+/* =========================================================
+           ALERTA DE ÉXITO / ERROR DE ENVÍO
+           Aparece debajo del botón tras intentar enviar.
+        ========================================================= */
+#alerta-envio {
+    display: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+#alerta-envio.exito {
+    display: block;
+    background: rgba(0, 255, 208, 0.1);
+    border: 2px solid #00ffd0;
+    color: #00ffd0;
+    text-shadow: 0 0 10px rgba(0, 255, 208, 0.5);
+}
+
+#alerta-envio.error-envio {
+    display: block;
+    background: rgba(255, 77, 240, 0.1);
+    border: 2px solid var(--color-neon-rosa);
+    color: var(--color-neon-rosa);
+    text-shadow: 0 0 10px rgba(255, 77, 240, 0.5);
+}
+
+/* Estado de carga del botón */
+.contact__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
 }

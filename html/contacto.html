@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conoce la historia, valores, compromiso sostenible y equipo de ANDROVIX-J.">
+    <meta name="description" content="Contáctanos a través de nuestro formulario o canales oficiales de ANDROVIX-J.">
     <title>Contacto | ANDROVIX-J</title>
 
     <!-- Bootstrap base para grid, espaciados, utilidades y componentes -->
@@ -21,13 +21,17 @@
 
     <!-- Estilos personalizados centralizados -->
     <link rel="stylesheet" href="../css/styleContacto.css">
+
+    <style>
+       
+    </style>
 </head>
 
 <body>
 
     <!-- ========================================================= -->
     <!-- INICIO: Encabezado principal y navegación                 -->
-    <!-- Función: presentar la marca, navegación y mensaje hero.  -->
+    <!-- Función: presentar la marca, navegación y mensaje hero.   -->
     <!-- ========================================================= -->
     <header class="encabezado-principal" id="inicio">
         <nav class="navbar navbar-expand-lg barra-navegacion fixed-top" aria-label="Navegación principal del sitio">
@@ -38,22 +42,25 @@
                     data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
                     aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon d-none"></span>
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav nav__var-gap mx-auto mb-3 mb-lg-0 text-center">
                         <li class="nav-item"><a class="nav-link enlace-navegacion" href="#inicio">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="#catalogo">Catalogo</a></li>
-                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="acerca.html">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="#catalogo">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="acerca.html">Sobre Nosotros</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link enlace-navegacion" href="#contacto">Contacto</a></li>
                     </ul>
 
                     <div class="d-flex justify-content-center align-items-center gap-3 iconos-navegacion">
-                        <a href="#" class="icono-accion" aria-label="Buscar"><i
-                                class="fa-solid fa-magnifying-glass"></i></a>
-                        <a href="#" class="icono-accion" aria-label="Ver carrito"><i
-                                class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="#" class="icono-accion" aria-label="Buscar">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="icono-accion" aria-label="Ver carrito">
+                            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -64,7 +71,7 @@
                 <div class="row justify-content-center justify-content-lg-start">
                     <div class="col-12 col-lg-8 col-xxl-7">
                         <div class="contenido-hero">
-                            <p class="etiqueta-hero mb-3">Soporte Cybernetico</p>
+                            <p class="etiqueta-hero mb-3">Soporte Cibernético</p>
                             <h1 class="titulo-principal efecto-glitch" data-text="CONTACTO">CONTACTO</h1>
                         </div>
                     </div>
@@ -76,86 +83,137 @@
     <!-- FIN: Encabezado principal y navegación                    -->
     <!-- ========================================================= -->
 
-    <main>
-        <h2 class="contact__title">NUESTROS CANALES</h2>        
+    <main id="contacto">
+        <h2 class="contact__title">NUESTROS CANALES</h2>
 
-        <!-- SECCION DE CONTACTO -->
-        <section class="contact">                   
+        <!-- ===================================================== -->
+        <!-- INICIO: Sección de contacto                           -->
+        <!-- Función: formulario validado + canales de contacto.   -->
+        <!-- ===================================================== -->
+        <section class="contact" aria-labelledby="titulo-formulario">
 
-            <form class="contact__form effects" action=""> 
-                <h3 class="contact__title">FORMULARIO DE CONTACTO</h3>                 
-            
-                <label class="contact__task">Tu nombre:
-                    <input class="contact__task-input" type="text" name="task" id="inputTask" placeholder="Tu nombre aquí">
+            <!-- FORMULARIO DE CONTACTO -->
+            <!-- action apunta a Formspree; reemplaza el ID por el tuyo -->
+            <form id="formulario-contacto" class="contact__form effects" action="https://formspree.io/f/xwvaqqep"
+                method="POST" novalidate aria-label="Formulario de contacto ANDROVIX-J">
+
+                <h3 class="contact__title" id="titulo-formulario">FORMULARIO DE CONTACTO</h3>
+
+                <!-- Campo: Nombre -->
+                <label class="contact__task" for="inputNombre">
+                    Nombre:
+                    <input class="contact__task-input" type="text" name="nombre" id="inputNombre"
+                        placeholder="Tu nombre completo" autocomplete="name" maxlength="80" aria-required="true"
+                        aria-describedby="error-nombre">
+                    <span class="mensaje-error" id="error-nombre" role="alert" aria-live="polite"></span>
                 </label>
 
-                <label class="contact__task">Correo:
-                    <input class="contact__task-input" type="text" name="task" id="inputTask" placeholder="ejemplo@gmail.com">
+                <!-- Campo: Correo electrónico -->
+                <label class="contact__task" for="inputCorreo">
+                    Correo electrónico:
+                    <input class="contact__task-input" type="email" name="correo" id="inputCorreo"
+                        placeholder="ejemplo@gmail.com" autocomplete="email" maxlength="120" aria-required="true"
+                        aria-describedby="error-correo">
+                    <span class="mensaje-error" id="error-correo" role="alert" aria-live="polite"></span>
                 </label>
 
-                <label class="contact__task">Asunto:
-                    <input class="contact__task-input" type="text" name="task" id="inputTask" placeholder="Tu asunto">
+                <!-- Campo: Teléfono -->
+                <label class="contact__task" for="inputTelefono">
+                    Teléfono:
+                    <input class="contact__task-input" type="tel" name="telefono" id="inputTelefono"
+                        placeholder="+57 300 123 4567" autocomplete="tel" maxlength="20" aria-required="true"
+                        aria-describedby="error-telefono">
+                    <span class="mensaje-error" id="error-telefono" role="alert" aria-live="polite"></span>
                 </label>
 
-                <label class="contact__task">Mensaje:
-                    <textarea class="contact__task-input input--resizable" rows="5" name="mensaje" id="mensaje" placeholder="Tu mensaje"></textarea>
+                <!-- Campo: Asunto -->
+                <label class="contact__task" for="inputAsunto">
+                    Asunto:
+                    <input class="contact__task-input" type="text" name="asunto" id="inputAsunto"
+                        placeholder="¿En qué podemos ayudarte?" maxlength="120" aria-required="true"
+                        aria-describedby="error-asunto">
+                    <span class="mensaje-error" id="error-asunto" role="alert" aria-live="polite"></span>
                 </label>
-                
-                <input class="contact__submit" type="submit" value="Enviar">            
+
+                <!-- Campo: Mensaje -->
+                <label class="contact__task" for="inputMensaje">
+                    Mensaje:
+                    <textarea class="contact__task-input input--resizable" rows="5" name="mensaje" id="inputMensaje"
+                        placeholder="Escribe tu mensaje aquí..." maxlength="1000" aria-required="true"
+                        aria-describedby="error-mensaje"></textarea>
+                    <span class="mensaje-error" id="error-mensaje" role="alert" aria-live="polite"></span>
+                </label>
+
+                <!-- Alerta de resultado del envío -->
+                <div id="alerta-envio" role="alert" aria-live="assertive"></div>
+
+                <button class="contact__submit" type="submit" id="btn-enviar">
+                    Enviar
+                </button>
             </form>
 
-            <div class="channels effects">
+            <!-- CANALES DE CONTACTO -->
+            <div class="channels effects" aria-label="Canales de contacto">
                 <h3 class="contact__title">CANALES</h3>
 
                 <div class="channel-icons">
 
                     <!-- Correo -->
                     <div class="icons-text">
-                        <i class="fa-regular fa-envelope icons__icon"></i>
-                        <p><span class="icons-text__title">Correo:</span><br>
-                        androvix-j@gmail.com</p>
-                    </div> 
-
-                    <!-- WhatsAAp -->                    
-                    <div class="icons-text">
-                        <i class="fa-brands fa-whatsapp icons__icon"></i>
-                        <p><span class="icons-text__title">WhatsApp</span><br>
-                        +57 300 123 45 67</p>
+                        <i class="fa-regular fa-envelope icons__icon" aria-hidden="true"></i>
+                        <p>
+                            <span class="icons-text__title">Correo:</span><br>
+                            androvix.j@atomicmail.io
+                        </p>
                     </div>
 
-                    <!-- Ubicación -->
+                    <!-- WhatsApp -->
                     <div class="icons-text">
-                        <i class="fa-solid fa-location-dot icons__icon"></i>
-                        <p><span class="icons-text__title">WhatsApp</span><br>
-                        +57 300 123 45 67</p>
+                        <i class="fa-brands fa-whatsapp icons__icon" aria-hidden="true"></i>
+                        <p>
+                            <span class="icons-text__title">WhatsApp</span><br>
+                            +57 300 123 45 67
+                        </p>
+                    </div>
+
+                    <!-- Ubicación (bug corregido: antes decía "WhatsApp") -->
+                    <div class="icons-text">
+                        <i class="fa-solid fa-location-dot icons__icon" aria-hidden="true"></i>
+                        <p>
+                            <span class="icons-text__title">Ubicación</span><br>
+                            Bogotá, Colombia
+                        </p>
                     </div>
 
                     <!-- Redes sociales -->
-                    <div class="icons-networks">
-                        <i class="fa-brands fa-facebook icons-networks__network"></i>
-                        <i class="fa-brands fa-x-twitter icons-networks__network"></i>
-                        <i class="fa-brands fa-instagram icons-networks__network"></i>
+                    <div class="icons-networks" aria-label="Redes sociales">
+                        <a href="#" aria-label="Facebook de ANDROVIX-J">
+                            <i class="fa-brands fa-facebook icons-networks__network" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter/X de ANDROVIX-J">
+                            <i class="fa-brands fa-x-twitter icons-networks__network" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram de ANDROVIX-J">
+                            <i class="fa-brands fa-instagram icons-networks__network" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    
-                </div>              
 
+                </div>
             </div>
 
         </section>
+        <!-- ===================================================== -->
+        <!-- FIN: Sección de contacto                              -->
+        <!-- ===================================================== -->
     </main>
-
-    
 
     <!-- ===================================================== -->
     <!-- INICIO: Pie de página                                 -->
-    <!-- Función: cerrar la página con navegación breve,       -->
-    <!-- identidad de marca y mensaje final del sitio.         -->
     <!-- ===================================================== -->
     <footer class="pie-pagina py-4 py-lg-5" aria-labelledby="titulo-footer">
         <div class="container">
             <div class="row g-4 align-items-start">
                 <div class="col-lg-5">
-                    <p class="subtitulo-seccion mb-2"></p>
                     <h2 class="titulo-footer" id="titulo-footer">ANDROVIX-J</h2>
                     <p class="texto-footer mb-0">
                         No sigas tendencias. Destrúyelas. Hacking(estilo) {Return (void)}
@@ -165,7 +223,7 @@
                     <h3 class="encabezado-footer">Navegación</h3>
                     <ul class="lista-footer list-unstyled mb-0">
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#catalogo">Catalogo</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
                         <li><a href="acerca.html">Sobre Nosotros</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
@@ -183,6 +241,16 @@
     <!-- ===================================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- =========================================================
+         SCRIPT DE VALIDACIÓN Y ENVÍO
+         Valida todos los campos antes de enviar a Formspree.
+         Si hay errores, los muestra sin enviar.
+         Si todo está correcto, envía via fetch (AJAX) para no
+         redirigir al usuario fuera de la página.
+    ========================================================= -->
+    <script src="../js/contacto.js"></script>
+
 </body>
 
 </html>
