@@ -20,6 +20,6 @@ async function cargarComponente(idContenedor, rutaComponente) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    cargarComponente("contenedor-navbar", "../../componentes/navbar.html");
-    cargarComponente("contenedor-footer", "../../componentes/footer.html");
+    cargarComponente("contenedor-navbar", "../componentes/navbar.html");
+    cargarComponente("contenedor-footer", "../componentes/footer.html");
 });
