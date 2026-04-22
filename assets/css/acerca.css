@@ -1,215 +1,6 @@
 /* =========================================================
-   VARIABLES DE DISEÑO Y AJUSTES GLOBALES
-   Agrupa colores, sombras y estilos reutilizables de la
-   identidad Neon Glitch para mantener coherencia visual.
+   HERO
    ========================================================= */
-:root {
-    --color-fondo-principal: #000000;
-    --color-fondo-secundario: #050505;
-    --color-fondo-panel: rgba(255, 255, 255, 0.04);
-    --color-borde: rgba(255, 255, 255, 0.10);
-    --color-texto: #ffffff;
-    --color-texto-secundario: #a99ab6;
-    --color-neon-rosa: #ff4df0;
-    --color-neon-cian: #c9f7ff;
-    --color-neon-violeta: #d08cff;
-    --color-neon-azul: #93ecff;
-    --sombra-neon-suave: 0 0 18px rgba(201, 247, 255, 0.16);
-    --sombra-neon-rosa: 0 0 18px rgba(255, 77, 240, 0.18);
-    --sombra-neon-cian: 0 0 18px rgba(201, 247, 255, 0.16);
-    --degradado-panel: linear-gradient(180deg, rgba(12, 12, 12, 0.96), rgba(4, 4, 4, 0.98));
-    --fuente-principal: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    --fuente-destacada: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: var(--fuente-principal);
-    color: var(--color-texto);
-    background: linear-gradient(180deg, #000000 0%, #030303 45%, #000000 100%);
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.py-lg-6 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-/* =========================================================
-   UTILIDADES VISUALES REUTILIZABLES
-   Define títulos, subtítulos y efecto glitch usados en varias
-   secciones para no repetir estilos base.
-   ========================================================= */
-.subtitulo-seccion,
-.etiqueta-hero {
-    color: var(--color-neon-cian);
-    text-transform: uppercase;
-    letter-spacing: 0.18rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-}
-
-.titulo-seccion,
-.titulo-principal,
-.titulo-seccion-grande {
-    font-family: var(--fuente-destacada);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 0;
-}
-
-.titulo-seccion {
-    font-size: clamp(2rem, 4vw, 3.3rem);
-    color: var(--color-texto);
-    text-shadow: 0 0 10px rgba(201, 247, 255, 0.12);
-}
-
-.titulo-seccion-grande {
-    font-size: clamp(2.4rem, 5vw, 4.2rem);
-    line-height: 0.95;
-    color: var(--color-neon-cian);
-    text-shadow: none;
-}
-
-.descripcion-seccion,
-.texto-apoyo-seccion,
-.descripcion-historia,
-.descripcion-caracteristica {
-    color: var(--color-texto-secundario);
-    line-height: 1.7;
-}
-
-.efecto-glitch {
-    position: relative;
-    display: inline-block;
-}
-
-.efecto-glitch::before,
-.efecto-glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.75;
-}
-
-.efecto-glitch::before {
-    color: var(--color-neon-cian);
-    transform: translate(-2px, -1px);
-    mix-blend-mode: screen;
-}
-
-.efecto-glitch::after {
-    color: var(--color-neon-rosa);
-    transform: translate(2px, 1px);
-    mix-blend-mode: screen;
-}
-
-.linea-destacada {
-    display: inline-block;
-    width: 72px;
-    height: 4px;
-    margin: 1rem 0 1.25rem;
-    background: linear-gradient(90deg, var(--color-neon-cian), var(--color-neon-rosa));
-    border-radius: 999px;
-    box-shadow: none;
-}
-
-/* =========================================================
-   NAVEGACIÓN Y ENCABEZADO HERO
-   Organiza la barra superior, la marca y la sección principal
-   sin perder la estética futurista del sitio.
-   ========================================================= */
-.encabezado-principal {
-    position: relative;
-}
-
-.barra-navegacion {
-    padding: 20px;
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px var(--color-neon-azul);
-    border-radius: 0 0 20px 20px;
-}
-
-.marca-sitio {
-    font-family: var(--fuente-destacada);
-    color: var(--color-neon-cian);
-    font-size: 1.45rem;
-    letter-spacing: 0.08em;
-    text-shadow: none;
-    text-shadow: 0 0 20px var(--color-neon-rosa) !important;
-    font-weight: bold;
-    filter: drop-shadow(0 0 10px #208cff);
-}
-
-.marca-sitio:hover,
-.marca-sitio:focus {
-    color: #f0ddff;
-}
-
-.boton-menu {
-    color: var(--color-neon-cian);
-    border: 1px solid rgba(88, 247, 255, 0.35);
-    box-shadow: var(--sombra-neon-cian);
-}
-
-.boton-menu:focus {
-    box-shadow: 0 0 0 0.18rem rgba(88, 247, 255, 0.22);
-}
-
-.enlace-navegacion {
-    color: rgba(255, 255, 255, 0.88);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.9rem;
-    padding: 0.8rem 1rem !important;
-    border-radius: 0.75rem;
-    transition: all 0.25s ease;
-}
-
-.enlace-navegacion:hover,
-.enlace-navegacion:focus,
-.enlace-navegacion.active {
-    color: #fff;
-    background-color: #9000ff8b !important;
-    box-shadow: 0 0 15px 0 #b731ff !important;
-}
-
-.iconos-navegacion {
-    min-width: 84px;
-}
-
-.icono-accion {
-    color: #dfd5ff;
-    font-size: 1rem;
-    transition: transform 0.2s ease, text-shadow 0.2s ease;
-}
-
-.icono-accion:hover,
-.icono-accion:focus {
-    transform: translateY(-2px);
-    text-shadow: 0 0 12px rgba(88, 247, 255, 0.8);
-}
-
 .seccion-hero {
     min-height: 100vh;
     padding-top: 6.5rem;
@@ -247,8 +38,6 @@ img {
 
 /* =========================================================
    SECCIÓN HISTORIA Y MISIÓN
-   Reemplaza la estructura rígida por una línea de tiempo más
-   semántica y adaptable a distintos tamaños de pantalla.
    ========================================================= */
 .seccion-historia {
     background: linear-gradient(180deg, #050505, #000000);
@@ -308,12 +97,9 @@ img {
 
 /* =========================================================
    SECCIÓN DE VALORES
-   Agrupa las tarjetas de principios en una retícula Bootstrap
-   con cajas reutilizables y estilo visual consistente.
    ========================================================= */
 .seccion-valores {
     background-color: #020202;
-    
 }
 
 .tarjeta-valor {
@@ -346,11 +132,8 @@ img {
     line-height: 1.65;
 }
 
-
 /* =========================================================
    SECCIÓN DE SOSTENIBILIDAD
-   Replica una composición en dos columnas: contenido a la
-   izquierda y una pieza visual futurista a la derecha.
    ========================================================= */
 .seccion-sostenibilidad {
     position: relative;
@@ -538,8 +321,6 @@ img {
 
 /* =========================================================
    SECCIÓN DEL EQUIPO
-   Unifica las cards de integrantes con nombres claros,
-   mejor accesibilidad y corrección de estructura visual.
    ========================================================= */
 .seccion-equipo {
     background-color: #020202;
@@ -592,28 +373,12 @@ img {
 }
 
 /* =========================================================
-   ACCESIBILIDAD Y ESTADOS DE FOCO
-   Mejora visibilidad al navegar con teclado y mantiene una
-   experiencia más robusta para distintos usuarios.
-   ========================================================= */
-:focus-visible {
-    outline: 2px solid var(--color-neon-cian);
-    outline-offset: 3px;
-}
-
-/* =========================================================
    AJUSTES RESPONSIVE
-   Adapta escalas, separaciones y comportamiento del fondo para
-   tablet y móvil sin perder la identidad visual del diseño.
    ========================================================= */
 @media (max-width: 991.98px) {
     .visual-sostenibilidad {
         min-height: 620px;
         margin-top: 1rem;
-    }
-
-    .iconos-navegacion {
-        padding-top: 0.75rem;
     }
 
     .seccion-hero {
@@ -641,10 +406,6 @@ img {
 
     .descripcion-pilar-sostenibilidad {
         font-size: 0.98rem;
-    }
-
-    .barra-navegacion {
-        background: rgba(8, 1, 18, 0.88);
     }
 
     .titulo-principal {
@@ -683,70 +444,9 @@ img {
         height: 40px;
     }
 
-    .etiqueta-hero,
-    .subtitulo-seccion {
-        font-size: 0.72rem;
-        letter-spacing: 0.16rem;
-    }
-
     .descripcion-hero,
     .descripcion-historia,
     .tarjeta-valor p {
         font-size: 0.95rem;
     }
-
-}
-
-
-
-/* =========================================================
-   PIE DE PAGINA
-   Cierra la experiencia visual con enlaces, identidad de
-   marca y un fondo acorde al lenguaje Neon Glitch.
-   ========================================================= */
-.pie-pagina {
-    position: relative;
-    background:
-        linear-gradient(180deg, rgba(4, 1, 10, 0.7), rgba(12, 2, 26, 0.96)),
-        radial-gradient(circle at top, rgba(0, 255, 255, 0.08), transparent 45%);
-    border-top: 1px solid rgba(0, 255, 255, 0.18);
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.35);
-}
-
-.titulo-footer {
-    margin: 0 0 0.85rem;
-    font-family: var(--fuente-destacada);
-    font-size: clamp(1.8rem, 4vw, 2.7rem);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.22), 0 0 24px rgba(255, 0, 255, 0.15);
-}
-
-.encabezado-footer {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-neon-cian);
-}
-
-.texto-footer,
-.creditos-footer,
-.lista-footer a {
-    color: #c5bdd1;
-    font-size: 0.98rem;
-    line-height: 1.7;
-    text-decoration: none;
-}
-
-.lista-footer {
-    display: grid;
-    gap: 0.55rem;
-}
-
-.lista-footer a:hover,
-.lista-footer a:focus-visible {
-    color: #ffffff;
-    text-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
 }

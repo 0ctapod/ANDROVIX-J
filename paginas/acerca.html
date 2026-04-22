@@ -17,48 +17,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Estilos personalizados centralizados -->
-    <link rel="stylesheet" href="../css/StyleAcerca.css">
+    rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/acerca.css">
 </head>
 
 <body>
 
     <!-- ========================================================= -->
-    <!-- INICIO: Encabezado principal y navegación                 -->
-    <!-- Función: presentar la marca, navegación y mensaje hero.  -->
+    <!-- INICIO: Encabezado principal de la página                 -->
     <!-- ========================================================= -->
     <header class="encabezado-principal" id="inicio">
-        <nav class="navbar navbar-expand-lg barra-navegacion fixed-top" aria-label="Navegación principal del sitio">
-            <div class="container">
-                <a class="navbar-brand marca-sitio" href="#inicio">ANDROVIX-J</a>
 
-                <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
-                    aria-label="Abrir menú de navegación">
-                    <span class="navbar-toggler-icon d-none"></span>
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+        <!-- ===================================================== -->
+        <!-- CONTENEDOR: Navbar modular                            -->
+        <!-- Función: cargar dinámicamente la barra de navegación  -->
+        <!-- compartida en todo el proyecto.                       -->
+        <!-- ===================================================== -->
+        <div id="contenedor-navbar"></div>
 
-                <div class="collapse navbar-collapse" id="menuPrincipal">
-                    <ul class="navbar-nav mx-auto mb-3 mb-lg-0 text-center">
-                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="#inicio">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="#catalogo">Catalogo</a></li>
-                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="acerca.html">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link enlace-navegacion" href="contacto.html">Contacto</a></li>
-                    </ul>
-
-                    <div class="d-flex justify-content-center align-items-center gap-3 iconos-navegacion">
-                        <a href="#" class="icono-accion" aria-label="Buscar"><i
-                                class="fa-solid fa-magnifying-glass"></i></a>
-                        <a href="#" class="icono-accion" aria-label="Ver carrito"><i
-                                class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
+        <!-- ===================================================== -->
+        <!-- INICIO: Sección hero                                  -->
+        <!-- ===================================================== -->
         <section class="seccion-hero d-flex align-items-center">
             <div class="container py-5">
                 <div class="row justify-content-center justify-content-lg-start">
@@ -69,8 +53,7 @@
                             <div class="caja-mensaje-hero mt-4">
                                 <p class="descripcion-hero mb-0">
                                     No es solo ropa. Es una extensión de tu identidad en una ciudad que nunca duerme.
-                                    Cada pieza de Armadura Urbana está diseñada para quienes caminan entre luces de
-                                    neón.
+                                    Cada pieza de Armadura Urbana está diseñada para quienes caminan entre luces de neón.
                                     Prepárate para destacar en un mundo donde lo ordinario ya no tiene lugar.
                                 </p>
                             </div>
@@ -79,16 +62,25 @@
                 </div>
             </div>
         </section>
+        <!-- ===================================================== -->
+        <!-- FIN: Sección hero                                     -->
+        <!-- ===================================================== -->
+
     </header>
     <!-- ========================================================= -->
-    <!-- FIN: Encabezado principal y navegación                    -->
+    <!-- FIN: Encabezado principal de la página                    -->
     <!-- ========================================================= -->
 
 
+    <!-- ========================================================= -->
+    <!-- INICIO: Contenido principal de la página                  -->
+    <!-- Función: agrupar todas las secciones informativas sobre   -->
+    <!-- la marca, su historia, valores, sostenibilidad y equipo.  -->
+    <!-- ========================================================= -->
     <main>
+
         <!-- ===================================================== -->
         <!-- INICIO: Sección historia y misión                     -->
-        <!-- Función: contar el origen de la marca y su propósito. -->
         <!-- ===================================================== -->
         <section class="seccion-historia py-5 py-lg-6" id="mision" aria-labelledby="titulo-historia">
             <div class="container">
@@ -137,10 +129,8 @@
         <!-- FIN: Sección historia y misión                        -->
         <!-- ===================================================== -->
 
-
         <!-- ===================================================== -->
         <!-- INICIO: Sección de valores                            -->
-        <!-- Función: mostrar los principios clave de la marca.    -->
         <!-- ===================================================== -->
         <section class="seccion-valores py-5 py-lg-6" id="valores" aria-labelledby="titulo-valores">
             <div class="container">
@@ -148,7 +138,8 @@
                     <div class="col-lg-8 text-lg-end">
                         <p class="subtitulo-seccion mb-2">Nuestra esencia</p>
                         <h2 class="titulo-seccion efecto-glitch" data-text="NUESTROS VALORES" id="titulo-valores">
-                            NUESTROS VALORES</h2>
+                            NUESTROS VALORES
+                        </h2>
                     </div>
                 </div>
 
@@ -156,32 +147,39 @@
                     <div class="col-12 col-md-6 col-xl-3 d-flex">
                         <article class="tarjeta-valor h-100 w-100">
                             <h3 class="titulo-tarjeta-valor">Innovación y Creatividad</h3>
-                            <p class="mb-0">Nos atrevemos a desafiar lo convencional. Buscamos constantemente nuevas
-                                formas de expresión, fusionando tecnología, arte y moda para crear piezas únicas.</p>
+                            <p class="mb-0">
+                                Nos atrevemos a desafiar lo convencional. Buscamos constantemente nuevas
+                                formas de expresión, fusionando tecnología, arte y moda para crear piezas únicas.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col-12 col-md-6 col-xl-3 d-flex">
                         <article class="tarjeta-valor h-100 w-100">
                             <h3 class="titulo-tarjeta-valor">Compromiso con el Medio Ambiente</h3>
-                            <p class="mb-0">Protegemos el planeta en un mundo donde los recursos son cada vez más
-                                escasos.</p>
+                            <p class="mb-0">
+                                Protegemos el planeta en un mundo donde los recursos son cada vez más escasos.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col-12 col-md-6 col-xl-3 d-flex">
                         <article class="tarjeta-valor h-100 w-100">
                             <h3 class="titulo-tarjeta-valor">Diversidad y Disruptividad</h3>
-                            <p class="mb-0">Celebramos lo diferente. Creamos piezas únicas que rompen patrones, exploran
-                                nuevas estéticas y fusionan tecnología, reciclaje y creatividad.</p>
+                            <p class="mb-0">
+                                Celebramos lo diferente. Creamos piezas únicas que rompen patrones, exploran
+                                nuevas estéticas y fusionan tecnología, reciclaje y creatividad.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col-12 col-md-6 col-xl-3 d-flex">
                         <article class="tarjeta-valor h-100 w-100">
                             <h3 class="titulo-tarjeta-valor">Libertad y Comodidad</h3>
-                            <p class="mb-0">Diseñamos para quienes buscan moverse sin límites. Nuestras prendas ofrecen
-                                libertad, ergonomía y confort.</p>
+                            <p class="mb-0">
+                                Diseñamos para quienes buscan moverse sin límites. Nuestras prendas ofrecen
+                                libertad, ergonomía y confort.
+                            </p>
                         </article>
                     </div>
                 </div>
@@ -191,19 +189,12 @@
         <!-- FIN: Sección de valores                               -->
         <!-- ===================================================== -->
 
-
         <!-- ===================================================== -->
         <!-- INICIO: Sección de sostenibilidad                     -->
-        <!-- Función: destacar el enfoque ecológico y responsable. -->
         <!-- ===================================================== -->
         <section class="seccion-sostenibilidad py-5 py-lg-6" id="sostenibilidad" aria-labelledby="titulo-sostenibilidad">
             <div class="container">
                 <div class="row g-4 g-xl-5 align-items-center">
-                    <!-- =============================================== -->
-                    <!-- COLUMNA DE CONTENIDO                            -->
-                    <!-- Presenta el título y los tres pilares de        -->
-                    <!-- sostenibilidad siguiendo la lógica del mockup.   -->
-                    <!-- =============================================== -->
                     <div class="col-12 col-xl-5">
                         <div class="contenido-sostenibilidad">
                             <p class="subtitulo-seccion mb-2">Compromiso ambiental</p>
@@ -211,7 +202,6 @@
                                 ENCRIPTADO<br>ECOLÓGICO
                             </h2>
 
-                            <!-- Lista descriptiva de pilares sostenibles -->
                             <div class="lista-pilares-sostenibilidad">
                                 <article class="item-pilar-sostenibilidad d-flex gap-3">
                                     <span class="numero-pilar-sostenibilidad">01</span>
@@ -246,11 +236,6 @@
                         </div>
                     </div>
 
-                    <!-- =============================================== -->
-                    <!-- COLUMNA VISUAL                                  -->
-                    <!-- Contiene la composición gráfica decorativa       -->
-                    <!-- inspirada en energía circular y naturaleza.      -->
-                    <!-- =============================================== -->
                     <div class="col-12 col-xl-7">
                         <div class="visual-sostenibilidad">
                             <div class="orbita-sostenibilidad orbita-sostenibilidad-externa" aria-hidden="true"></div>
@@ -269,10 +254,8 @@
         <!-- FIN: Sección de sostenibilidad                        -->
         <!-- ===================================================== -->
 
-
         <!-- ===================================================== -->
         <!-- INICIO: Sección del equipo                            -->
-        <!-- Función: presentar a los integrantes principales.     -->
         <!-- ===================================================== -->
         <section class="seccion-equipo py-5 py-lg-6" id="equipo" aria-labelledby="titulo-equipo">
             <div class="container">
@@ -291,7 +274,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-4">
                     <div class="col d-flex">
                         <article class="card tarjeta-equipo w-100 h-100">
-                            <img src="../img/Jhony.jpeg" class="card-img-top imagen-integrante"
+                            <img src="../assets/img/Jhony.jpeg" class="card-img-top imagen-integrante"
                                 alt="Fotografía de Jhony">
                             <div class="card-body cuerpo-tarjeta-equipo">
                                 <span class="identificador-integrante">ID: NODE 01</span>
@@ -303,7 +286,7 @@
 
                     <div class="col d-flex">
                         <article class="card tarjeta-equipo w-100 h-100">
-                            <img src="../img/Octavio.png" class="card-img-top imagen-integrante"
+                            <img src="../assets/img/Octavio.png" class="card-img-top imagen-integrante"
                                 alt="Fotografía de Octavio">
                             <div class="card-body cuerpo-tarjeta-equipo">
                                 <span class="identificador-integrante">ID: VOID 01</span>
@@ -315,7 +298,7 @@
 
                     <div class="col d-flex">
                         <article class="card tarjeta-equipo w-100 h-100">
-                            <img src="../img/Angie.jpeg" class="card-img-top imagen-integrante"
+                            <img src="../assets/img/Angie.jpeg" class="card-img-top imagen-integrante"
                                 alt="Fotografía de Angie">
                             <div class="card-body cuerpo-tarjeta-equipo">
                                 <span class="identificador-integrante">ID: SYNTH 01</span>
@@ -327,7 +310,7 @@
 
                     <div class="col d-flex">
                         <article class="card tarjeta-equipo w-100 h-100">
-                            <img src="../img/David.png" class="card-img-top imagen-integrante"
+                            <img src="../assets/img/David.png" class="card-img-top imagen-integrante"
                                 alt="Fotografía de David">
                             <div class="card-body cuerpo-tarjeta-equipo">
                                 <span class="identificador-integrante">ID: NODE 02 </span>
@@ -339,7 +322,7 @@
 
                     <div class="col d-flex">
                         <article class="card tarjeta-equipo w-100 h-100">
-                            <img src="../img/Oscar.jpeg" class="card-img-top imagen-integrante"
+                            <img src="../assets/img/Oscar.jpeg" class="card-img-top imagen-integrante"
                                 alt="Fotografía de Oscar">
                             <div class="card-body cuerpo-tarjeta-equipo">
                                 <span class="identificador-integrante">ID: ORION 01</span>
@@ -354,44 +337,25 @@
         <!-- ===================================================== -->
         <!-- FIN: Sección del equipo                               -->
         <!-- ===================================================== -->
+
     </main>
+    <!-- ========================================================= -->
+    <!-- FIN: Contenido principal de la página                     -->
+    <!-- ========================================================= -->
+    
+    <!-- ========================================================= -->
+    <!-- CONTENEDOR: Footer modular                                -->
+    <!-- Función: cargar dinámicamente el pie de página global     -->
+    <!-- compartido en todo el proyecto.                           -->
+    <!-- ========================================================= -->
+    <div id="contenedor-footer"></div>
 
-    <!-- ===================================================== -->
-    <!-- INICIO: Pie de página                                 -->
-    <!-- Función: cerrar la página con navegación breve,       -->
-    <!-- identidad de marca y mensaje final del sitio.         -->
-    <!-- ===================================================== -->
-    <footer class="pie-pagina py-4 py-lg-5" aria-labelledby="titulo-footer">
-        <div class="container">
-            <div class="row g-4 align-items-start">
-                <div class="col-lg-5">
-                    <p class="subtitulo-seccion mb-2"></p>
-                    <h2 class="titulo-footer" id="titulo-footer">ANDROVIX-J</h2>
-                    <p class="texto-footer mb-0">
-                        No sigas tendencias. Destrúyelas. Hacking(estilo) {Return (void)}
-                    </p>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <h3 class="encabezado-footer">Navegación</h3>
-                    <ul class="lista-footer list-unstyled mb-0">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#catalogo">Catalogo</a></li>
-                        <li><a href="acerca.html">Sobre Nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <h3 class="encabezado-footer">ANDROVIX-J</h3>
-                    <p class="texto-footer mb-2">Neon Glitch / Moda conceptual / Exploración creativa</p>
-                    <p class="creditos-footer mb-0">© 2026 ANDROVIX-J. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ===================================================== -->
-    <!-- FIN: Pie de página                                    -->
-    <!-- ===================================================== -->
-
+    <!-- ========================================================= -->
+    <!-- SCRIPTS DEL SITIO                                         -->
+    <!-- Función: cargar componentes reutilizables y habilitar     -->
+    <!-- funcionalidades base de Bootstrap.                        -->
+    <!-- ========================================================= -->
+    <script src="../assets/js/components.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
