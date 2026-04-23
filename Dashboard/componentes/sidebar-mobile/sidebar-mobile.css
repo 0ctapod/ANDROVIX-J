@@ -1,0 +1,15 @@
+
+/* ----- BARRA LATERAL IZQUIERDA MOBILE ----- */
+.sidebar-mobile__items {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    overflow: auto;
+    padding: 20px;
+}
+
+@media screen and (max-width: 636px) {
+    .sidebar__link {
+        font-size: 1.8rem;
+    }    
+}

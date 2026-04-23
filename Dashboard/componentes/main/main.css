@@ -1,0 +1,208 @@
+
+/* ---- Seccion Fondo, imagen y peliculas en tendencia ----*/
+
+.main__background {
+    /* ahora con esta nueva metodología de trabajo, primero se le especifica donde está la carpeta con el archivo CSS y después de ahí, ahí sí se especifica la ruta que vendría siendo, en este caso las películas y después la imagen de la portada como se tiene en este momento. */
+    background: url("../../Peliculas/Portada.png") top/cover fixed;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #e8e8e8;
+}
+
+.main__opaque {
+    background: linear-gradient(to right, #000000da 50%, transparent);
+    border-radius: var(--border-radius);
+}
+
+.main-movie {
+    width: 60%;
+    padding: 60px 30px;
+}
+
+.main-movie__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 5px 5px 10px #5700a9;
+}
+
+/* ---------------- SECCION CONTACTO ---------------- */
+
+/* =========================================================
+   CONTENIDO PRINCIPAL DE CONTACTO
+   Mantiene la estructura original del formulario y canales,
+   pero alineada con el sistema visual modular del proyecto.
+   ========================================================= */
+
+.dashboard {
+    margin: 0 10px;
+    padding: 15px;
+    box-shadow: 0 0 15px 0 var(--color-neon-cian);
+    border-radius: 20px;
+}
+
+.seccion-contacto-principal {
+    background:
+        radial-gradient(circle at top left, rgba(181, 108, 255, 0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(88, 247, 255, 0.08), transparent 20%),
+        linear-gradient(180deg, #040404 0%, #000000 100%);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.contact__form {
+    padding: 20px;
+    background:
+        radial-gradient(circle at top left, rgba(181, 108, 255, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(88, 247, 255, 0.10), transparent 25%),
+        linear-gradient(180deg, #090011 0%, #06000d 35%, #0b0014 100%);
+    border: 1px solid var(--color-borde);
+    border-radius: 1rem;
+    backdrop-filter: blur(12px);
+    border: 4px dashed #330053;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact__title {
+    margin: 20px 10px;
+    font-family: var(--fuente-destacada);
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 15px var(--color-neon-cian);
+    color: var(--color-texto);
+    font-weight: bold;
+}
+
+.contact__description {
+    margin-left: 10px;
+    color: #d8d8d8;
+    font-size: 1.1rem;
+}
+
+.contact__task {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-neon-cian);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--color-neon-cian);
+}
+
+.dasboard-input {
+    flex-grow: 1;
+}
+
+.contact__task-input {
+    width: 100%;
+    margin-top: 0.55rem;
+    padding: 10px 20px;
+    color: var(--color-texto);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.85rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.contact__task-input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.contact__task-input:hover {
+    border-color: rgba(201, 247, 255, 0.28);
+}
+
+.contact__task-input:focus {
+    outline: none;
+    border-color: rgba(255, 77, 240, 0.55);
+    box-shadow: 0 0 0 0.2rem rgba(255, 77, 240, 0.12);
+}
+
+.contact__task-select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 15px;
+    text-shadow: 0 0 5px var(--color-neon-cian);
+    margin-bottom: 25px;
+
+    /* Quitando la flechita que viene por defecto */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* Agregando y posicionando la nueva flecha */
+    background: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+.contact__task-select option {
+    background-color: #170025;
+}
+
+.input--resizable {
+    resize: none;
+}
+
+.mensaje-error {
+    display: block;
+    min-height: 1.2rem;
+    margin-top: 0.45rem;
+    color: #ff8ec8;
+    font-size: 0.84rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+#alerta-envio {
+    min-height: 1.5rem;
+    margin-top: 1rem;
+    color: var(--color-neon-cian);
+    font-weight: 600;
+}
+
+.contact__submit {
+    margin-top: 1rem;
+    padding: 0.95rem 1.4rem;
+    border: 1px solid rgba(255, 77, 240, 0.35);
+    border-radius: 0.9rem;
+    background: linear-gradient(90deg, rgba(255, 77, 240, 0.18), rgba(147, 236, 255, 0.18));
+    color: var(--color-texto);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--color-neon-cian);
+    transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.contact__submit:hover,
+.contact__submit:focus {
+    transform: translateY(-2px);
+    border-color: rgba(255, 77, 240, 0.55);
+    box-shadow: 0 0 22px rgba(255, 77, 240, 0.20);
+}
+
+
+/* ---- SECCIÓN ADAPATACIÓN SEGUN LA PANTALLA ---- */
+
+/* Si la pantalla es mayor a 600px entonces la letra del titulo se agranda */
+@media screen and (min-width: 600px) {
+    .main-movie__title {
+        font-size: 4rem;
+    }  
+
+    .contact__task {
+        font-size: 1.1rem;
+    }
+
+    .contact__form {
+        gap: 30px;
+    }
+}
+

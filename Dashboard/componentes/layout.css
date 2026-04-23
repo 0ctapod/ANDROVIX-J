@@ -1,0 +1,118 @@
+
+/* LAYOUT */
+
+/* ---- HOLY GRAIL ---- */
+.holy-grail {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: var(--gap-holy-grail);
+    height: 100vh;
+}
+
+/* ---- CONTENT WRAPPER ---- */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-holy-grail);
+    margin-top: 90px;
+}
+
+.position-sticky {
+    height: 100vh;
+    position: sticky;
+    top: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;        
+}
+
+/* ---- SIDEBAR ---- */
+/* BARRA LATERAL IZQUIERDA PC */
+.sidebar {
+    width: 280px;
+    backdrop-filter: blur(14px);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 15px 0 var(--color-neon-cian);
+}
+
+/* BARRA LATERAL IZQUIERDA MOBILE */
+.sidebar-mobile {
+    display: none;
+    backdrop-filter: blur(14px);
+    background-color: #190038a9;
+    box-shadow: 0 0 15px 0 var(--color-neon-cian);
+    border-radius: 10px 10px 0 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* CONTENIDO PRINCIPAL */
+.main {
+    flex: 4 1 500px;
+    backdrop-filter: blur(14px);
+    border-radius: var(--border-radius);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* CONTENIDO SECUNDARIO */
+.aside {
+    flex: 2 1 300px;
+    background-color: var(--bg-containers);
+    border-radius: var(--border-radius);
+}
+
+
+/* ----- SECCION PANTALLA RESPONSIVA ----- */
+
+/* ---- BARRA SIDEBAR ---- */
+/* Si la panatalla es de 1040px o menor entonces que se reduzca a 100px el Sidebar */
+@media screen and (max-width: 1040px) {
+    .sidebar {
+        width: 120px;
+    }    
+}
+
+/* Si la pantalla es menor o igual a 636px pasamos al sibar de mobile */
+@media screen and (max-width: 636px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-mobile {
+        display: block;
+        width: 100%;
+    }    
+}
+
+
+/* ---- BARRA ASIDE ---- */
+/* Si la pantalla es menor o igual a 930px entonces que se quite el sticky del aside  */
+@media screen and (max-width: 930px) {
+    .aside {
+        position: static;
+        margin-left: 124px;
+    }    
+}
+
+/* Si la pantalla es menor o igual a 636px restauramos el "margin-left" */
+@media screen and (max-width: 636px) {
+    .aside {
+        margin-left: 0;
+    }    
+}
+
+/* ---- HOLY GRAIL ---- */
+/* Si la resolución es mayor o igual 1025px el holy grail cambie a porcentajes para una mejora de proporción visual */
+@media screen and (min-width: 1440px) {    
+    .main {
+        width: 70%;
+    }
+
+    .aside {
+        width: 30%;
+    }
+}

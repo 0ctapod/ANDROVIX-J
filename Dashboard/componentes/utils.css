@@ -1,0 +1,190 @@
+
+/* --- CLASES REUTILIZABLES --- */
+
+/* --- TITULO Y BOTON --- */
+.main-movies-title-container {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-movies-title-container button {
+    font-family: inherit;
+    background-color: #2a2a2a;
+    color: #cccccc;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px 0 #5c5c5c;
+}
+
+.main-movies-title-container button:hover {
+    background-color: #e2e2e2;
+    color: #1b1b1b;
+    cursor: pointer;
+}
+
+
+/* ---- ANCHO Y ALTO ---- */
+.width-height {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ---- TARJETA CON ICONO DE PLAY Y LINEA DE TIEMPO ---- */
+.main-movies-watch-card {
+    position: relative;   
+    border-radius: var(--border-radius); 
+    transition: opacity 0.4s, outline 0.4s, box-shadow 0.4s;
+}
+
+.main-movies-watch-card:hover {
+    opacity: 0.7;
+    outline: var(--outline);    
+    box-shadow: var(--box-shadow-hover);
+}
+
+.main-movies-watch-card__cover {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #e6e6e6;
+}
+
+.main-movies-watch-card__play-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0px 10px #000);
+}
+
+.main-movies-watch-card__progress {
+    position: absolute;
+    bottom: 10px;
+    background-color: #000000af;
+    width: 90%;
+    height: 5px;
+    box-shadow: 0 0 5px 0 #1b1b1b;
+    right: 0;
+    left: 0;
+    bottom: 10px;
+    margin: auto;
+    border-radius: 3px;
+}
+
+.main-movies-watch-card__progress-bar {
+    position: relative;
+    background-color: #ffffff;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.main-movies-watch-card__progress-handler {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%); /* la desplaza hacia afuera */
+    box-shadow: 0 0 10px 0 #000000;
+}
+
+
+/* ---- SECCIÓN RATED ---- */
+.rated {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 20px;
+    padding-bottom: 20px;
+}
+
+.rated__movie {     
+    position: relative;
+    border-radius: var(--border-radius); 
+    transition: outline 0.5s, box-shadow 0.5s; 
+}
+
+.rated__movie:hover {
+    outline: var(--outline);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Portada */
+.rated__cover {
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px 0 #b6b6b6;    
+}
+
+/* Calificación */
+.rated__qualification {
+    position: absolute;
+    top: 10px;
+    left: 10px;   
+    padding: 3px 10px;
+    background-color: var(--bg-containers); 
+    box-shadow: 0 0 8px 0 #a8a8a8;
+}
+
+.rated-actions {
+    position: absolute;
+    background: linear-gradient(transparent, #000000);
+    top: 0;
+    border-radius: var(--border-radius); 
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.rated-actions:hover {
+    opacity: 1;
+}
+
+.rated__button-funtion {
+    font-weight: bold;
+    color: var(--font-color);
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.rated-actions-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    
+}
+
+.rated-actions-buttons__watch {
+    padding: 0 10px;
+    background-color: #ff0000;
+    border: 2px solid #000;
+}
+
+.rated-actions-buttons__watch:hover {
+    background-color: #d2d2d2;
+    color: #202020;
+    cursor: pointer;
+}
+
+.rated-actions-buttons__add {
+    padding: 4px 9px;
+    border-radius: 50%;
+    background-color: #242424;
+}
+
+.rated-actions-buttons__add:hover {
+    background-color: #737373;
+    cursor: pointer;
+}

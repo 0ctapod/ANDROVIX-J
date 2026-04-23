@@ -1,0 +1,54 @@
+
+/* ----- BARRA LATERAL IZQUIERDA ----- */
+.sidebar__title {
+    font-size: 1rem;
+    color: #949494;
+    margin-bottom: 40px;
+}
+
+.sidebar__items {
+    padding: 5px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar__text {
+    margin-left: 10px;
+}
+
+.sidebar__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4rem;
+    display: inline-block;
+    text-shadow: 0 0 10px var(--color-neon-violeta);
+    transition: color 0.5s, transform 0.5s, filter 0.5s;
+}
+
+.sidebar__link:hover {
+    color: #ff8000;
+    transform: translateX(10px);
+    filter: brightness(1.2) sepia(1) saturate(5);
+}
+
+.sidebar__divider {
+    margin-top: 20px;
+    border-bottom: 2px solid #3f3f3f;
+    margin-bottom: 20px;
+}
+
+
+/* ----- SECCION PANTALLA RESPONSIVA ----- */
+
+/* Si la panatalla es de 1032px o menor entonces que los titulos del sidebar dejen de mostrarse (igual que YouTube) */
+@media screen and (max-width: 1040px) {
+    .sidebar__text {
+        display: none;
+    }
+
+    .sidebar__link {
+        font-size: 2rem;
+    }    
+}

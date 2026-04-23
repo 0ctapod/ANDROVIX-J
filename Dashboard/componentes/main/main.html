@@ -1,0 +1,90 @@
+
+<!-- Fondo Dashboard principal -->
+<section class="main__background">
+
+    <!-- Fondo opaco -->
+    <div class="main__opaque">
+
+        <!-- Contenedor titulo Dashboard -->
+        <section class="main-movie">
+            <h1 class="main-movie__title">DASHBOARD</h1>
+                                     
+        </section>                                 
+    </div>
+
+</section>
+
+<!-- SECCION DE CONTACTO -->
+<section class="dashboard">
+
+    <h2 class="contact__title" id="titulo-formulario">AGREGAR NUEVO PRODUCTO</h2>
+    <p class="contact__description">Completa el fomulario para agregar un nuevo producto al catalogo</p>
+
+    <form id="formulario-contacto" class="contact__form effects" action="https://formspree.io/f/xwvaqqep" method="POST"
+        novalidate aria-label="Formulario de contacto ANDROVIX-J">
+        
+        <div class="dasboard-input">
+            <label class="contact__task" for="inputNombre">
+                Nombre del producto
+                <input class="contact__task-input" type="text" name="nombre" id="inputNombre" placeholder="Ej: Chaqueta neon"
+                    autocomplete="name" maxlength="80" aria-required="true" aria-describedby="error-nombre">
+                <span class="mensaje-error" id="error-nombre" role="alert" aria-live="polite"></span>
+            </label>
+            
+            <label class="contact__task" for="inputCorreo">
+                Precio
+                <input class="contact__task-input" type="email" name="correo" id="inputCorreo" placeholder="Ej: 150000"
+                    autocomplete="email" maxlength="120" aria-required="true" aria-describedby="error-correo">
+                <span class="mensaje-error" id="error-correo" role="alert" aria-live="polite"></span>
+            </label>
+
+            <label class="contact__task" for="">Categoria
+                <select class="contact__task-input contact__task-select" name="" id="">
+                    <option value="Chaquetas">Chaquetas</option>
+                    <option value="Pantalon">Pantalon</option>
+                    <option value="Camisas">Camisas</option>
+                    <option value="Zapatos">Zapatos</option>
+                    <option value="Accesorios">Accesorios</option>
+                </select>
+            </label>
+            
+            <label class="contact__task" for="inputTelefono">
+                Imagen (URL)
+                <input class="contact__task-input" type="text" name="telefono" id="inputTelefono" placeholder="https://ejemplo.com/imagen.jpg"
+                    autocomplete="tel" maxlength="20" aria-required="true" aria-describedby="error-telefono">
+                <span class="mensaje-error" id="error-telefono" role="alert" aria-live="polite"></span>
+            </label>
+
+        </div>
+
+        <div class="dasboard-input">
+            <label class="contact__task" for="inputMensaje">
+                Descripción
+                <textarea class="contact__task-input input--resizable" rows="5" name="mensaje" id="inputMensaje"
+                    placeholder="Describe las caracteristicas del prooducto..." maxlength="1000" aria-required="true"
+                    aria-describedby="error-mensaje"></textarea>
+                <span class="mensaje-error" id="error-mensaje" role="alert" aria-live="polite"></span>
+            </label>
+        
+            <label class="contact__task" for="">Estado
+                <select class="contact__task-input contact__task-select" name="" id="">
+                    <option value="Disponible">Disponible</option>
+                    <option value="Agotado">Agotado</option>
+                </select>
+            </label>
+        
+            <div id="alerta-envio" role="alert" aria-live="assertive"></div>
+        
+            <button class="contact__submit" type="submit" id="btn-enviar">Agregar Producto</button>
+        
+        </div>
+        
+    
+        
+    
+        
+    </form>
+    
+</section>
+
+

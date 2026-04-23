@@ -1,0 +1,43 @@
+
+/* SECCIÓN DE LAS VARIABLES */
+:root {
+
+    /* Tipografia principal */
+    --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    /* Colores */
+    --bg-color-page: #2b2b2b;
+    --bg-containers: #1b1b1b;
+    --font-color: #e1e1e1;
+    --font-color-title-min: #949494;
+
+    /* Tamaños */
+    --font-size: 1rem;
+    
+    /* Separaciones */
+    --gap-holy-grail: 5px;
+
+    /* Bordes */
+    --border-radius: 10px;
+    --outline: 3px solid #ffffff;
+
+    /* Sombras */
+    --box-shadow-hover: 0 0 10px 3px #ffffff;
+
+    --color-fondo-principal: #000000;
+    --color-fondo-secundario: #140020;
+    --color-fondo-panel: rgba(255, 255, 255, 0.04);
+    --color-borde: rgba(255, 255, 255, 0.10);
+    --color-texto: #ffffff;
+    --color-texto-secundario: #a99ab6;
+    --color-neon-rosa: #ff4df0;
+    --color-neon-cian: #c9f7ff;
+    --color-neon-violeta: #d69dff;
+    --color-neon-azul: #93ecff;
+    --sombra-neon-suave: 0 0 18px rgba(201, 247, 255, 0.16);
+    --sombra-neon-rosa: 0 0 18px rgba(255, 77, 240, 0.18);
+    --sombra-neon-cian: 0 0 18px rgba(201, 247, 255, 0.16);
+    --degradado-panel: linear-gradient(180deg, rgba(12, 12, 12, 0.96), rgba(4, 4, 4, 0.98));
+    --fuente-principal: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --fuente-destacada: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
