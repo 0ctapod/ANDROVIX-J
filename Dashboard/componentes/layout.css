@@ -19,9 +19,9 @@
 }
 
 .position-sticky {
-    height: 100vh;
+    height: 90vh;
     position: sticky;
-    top: 20px;
+    top: 30px;
     overflow-x: hidden;
     overflow-y: auto;        
 }
@@ -30,10 +30,8 @@
 /* BARRA LATERAL IZQUIERDA PC */
 .sidebar {
     width: 280px;
-    backdrop-filter: blur(14px);
+    border-right: 5px dashed #190038a9;
     padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 15px 0 var(--color-neon-cian);
 }
 
 /* BARRA LATERAL IZQUIERDA MOBILE */

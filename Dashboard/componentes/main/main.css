@@ -3,19 +3,19 @@
 
 .main__background {
     /* ahora con esta nueva metodología de trabajo, primero se le especifica donde está la carpeta con el archivo CSS y después de ahí, ahí sí se especifica la ruta que vendría siendo, en este caso las películas y después la imagen de la portada como se tiene en este momento. */
-    background: url("../../Peliculas/Portada.png") top/cover fixed;
+    background: url("/Portada.png") top/cover fixed;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 #e8e8e8;
 }
 
 .main__opaque {
     background: linear-gradient(to right, #000000da 50%, transparent);
     border-radius: var(--border-radius);
+    box-shadow: 0 0 15px 0 var(--color-neon-cian);
 }
 
 .main-movie {
     width: 60%;
-    padding: 60px 30px;
+    padding: 25vh 30px;
 }
 
 .main-movie__title {
@@ -36,7 +36,6 @@
 .dashboard {
     margin: 0 10px;
     padding: 15px;
-    box-shadow: 0 0 15px 0 var(--color-neon-cian);
     border-radius: 20px;
 }
 
@@ -194,7 +193,7 @@
 /* Si la pantalla es mayor a 600px entonces la letra del titulo se agranda */
 @media screen and (min-width: 600px) {
     .main-movie__title {
-        font-size: 4rem;
+        font-size: 5rem;
     }  
 
     .contact__task {
