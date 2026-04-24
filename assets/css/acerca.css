@@ -6,7 +6,7 @@
     padding-top: 6.5rem;
     background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.74)),
-        url("../img/Fondo.png") center / cover no-repeat fixed;
+        url("../img/fondo-acerca.png") center / cover no-repeat fixed;
 }
 
 .contenido-hero {

@@ -6,11 +6,12 @@
     padding-top: 6.5rem;
     background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.74)),
-        url("../img/Fondo3.png") center / cover no-repeat fixed;
+        url("../img/fondo-contacto.png") center / cover no-repeat fixed;
 }
-
-.caja-mensaje-hero-contacto {
-    max-width: 760px;
+.titulo-principal {
+    font-size: clamp(2.8rem, 7vw, 5.6rem);
+    color: var(--color-neon-cian);
+    text-shadow: none;
 }
 
 /* =========================================================

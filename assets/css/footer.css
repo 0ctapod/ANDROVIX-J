@@ -47,3 +47,7 @@
     color: #ffffff;
     text-shadow: 0 0 12px rgba(0, 255, 255, 0.35);
 }
+
+#btn-admin {
+    color: black;
+}
