@@ -1,3 +1,15 @@
+/*
+ * =========================================================
+ *  ANDROVIX-J | PRODUCTOS DINÁMICOS DEL CATÁLOGO
+ * =========================================================
+ *  Este archivo solo se encarga de:
+ *  - Leer productos creados desde administrador.
+ *  - Insertarlos en el catálogo.
+ *
+ *  La lógica del carrito vive en carrito.js.
+ * =========================================================
+ */
+
 const CLAVE_PRODUCTOS = "androvix_productos";
 
 function obtenerProductosGuardados() {
