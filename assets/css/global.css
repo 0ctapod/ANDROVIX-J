@@ -138,6 +138,7 @@ img {
 }
 
 @media (max-width: 575.98px) {
+
     .etiqueta-hero,
     .subtitulo-seccion {
         font-size: 0.72rem;

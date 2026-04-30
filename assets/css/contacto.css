@@ -8,6 +8,7 @@
         linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.74)),
         url("../img/fondo-contacto.png") center / cover no-repeat fixed;
 }
+
 .titulo-principal {
     font-size: clamp(2.8rem, 7vw, 5.6rem);
     color: var(--color-neon-cian);

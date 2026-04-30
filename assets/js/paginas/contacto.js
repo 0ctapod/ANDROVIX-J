@@ -20,15 +20,15 @@
    Se obtienen una sola vez al cargar el script para no
    consultar el DOM en cada validación.
 ───────────────────────────────────────────────────────── */
-const formulario    = document.getElementById('formulario-contacto');
-const btnEnviar     = document.getElementById('btn-enviar');
-const alertaEnvio   = document.getElementById('alerta-envio');
+const formulario = document.getElementById('formulario-contacto');
+const btnEnviar = document.getElementById('btn-enviar');
+const alertaEnvio = document.getElementById('alerta-envio');
 
-const campoNombre   = document.getElementById('inputNombre');
-const campoCorreo   = document.getElementById('inputCorreo');
+const campoNombre = document.getElementById('inputNombre');
+const campoCorreo = document.getElementById('inputCorreo');
 const campoTelefono = document.getElementById('inputTelefono');
-const campoAsunto   = document.getElementById('inputAsunto');
-const campoMensaje  = document.getElementById('inputMensaje');
+const campoAsunto = document.getElementById('inputAsunto');
+const campoMensaje = document.getElementById('inputMensaje');
 
 /* ─────────────────────────────────────────────────────────
    EXPRESIONES REGULARES
@@ -82,7 +82,7 @@ function limpiarError(campo, spanError) {
  * Resetea todos los campos al estado neutro (sin color de borde).
  */
 function resetearEstadosCampos() {
-    [campoNombre, campoCorreo, campoTelefono, campoAsunto, campoMensaje].forEach(function(campo) {
+    [campoNombre, campoCorreo, campoTelefono, campoAsunto, campoMensaje].forEach(function (campo) {
         campo.classList.remove('campo-error', 'campo-valido');
     });
 }
@@ -177,8 +177,8 @@ function validarFormulario() {
    VALIDACIÓN EN TIEMPO REAL (al salir de cada campo)
    Mejora la UX mostrando errores sin esperar al submit.
 ───────────────────────────────────────────────────────── */
-[campoNombre, campoCorreo, campoTelefono, campoAsunto, campoMensaje].forEach(function(campo) {
-    campo.addEventListener('blur', function() {
+[campoNombre, campoCorreo, campoTelefono, campoAsunto, campoMensaje].forEach(function (campo) {
+    campo.addEventListener('blur', function () {
         validarFormulario();
         /* Ocultamos la alerta de envío si el usuario corrige el formulario */
         alertaEnvio.className = '';
@@ -194,7 +194,7 @@ function validarFormulario() {
      2. Enviar via fetch() a Formspree (AJAX, sin redirección).
      3. Mostrar alerta de resultado.
 ───────────────────────────────────────────────────────── */
-formulario.addEventListener('submit', function(evento) {
+formulario.addEventListener('submit', function (evento) {
     /* Siempre prevenimos el envío nativo del formulario */
     evento.preventDefault();
 
@@ -221,36 +221,36 @@ formulario.addEventListener('submit', function(evento) {
             'Accept': 'application/json'
         }
     })
-    .then(function(respuesta) {
-        if (respuesta.ok) {
-            /* ✅ Envío exitoso */
-            alertaEnvio.textContent = '✅ Mensaje enviado con éxito. ¡Nos pondremos en contacto pronto!';
-            alertaEnvio.className = 'exito';
+        .then(function (respuesta) {
+            if (respuesta.ok) {
+                /* ✅ Envío exitoso */
+                alertaEnvio.textContent = '✅ Mensaje enviado con éxito. ¡Nos pondremos en contacto pronto!';
+                alertaEnvio.className = 'exito';
 
-            /* Limpiamos el formulario y los estados visuales */
-            formulario.reset();
-            resetearEstadosCampos();
-        } else {
-            /* ❌ Formspree devolvió un error HTTP */
-            return respuesta.json().then(function(datos) {
-                const mensajeFormspree = (datos && datos.errors)
-                    ? datos.errors.map(function(e) { return e.message; }).join(', ')
-                    : 'Error al enviar. Intenta de nuevo.';
-                alertaEnvio.textContent = '❌ ' + mensajeFormspree;
-                alertaEnvio.className = 'error-envio';
-            });
-        }
-    })
-    .catch(function() {
-        /* ❌ Error de red (sin conexión, CORS, etc.) */
-        alertaEnvio.textContent = '❌ Error de conexión. Verifica tu internet e intenta de nuevo.';
-        alertaEnvio.className = 'error-envio';
-    })
-    .finally(function() {
-        btnEnviar.disabled = false;
-        btnEnviar.textContent = 'Enviar';
+                /* Limpiamos el formulario y los estados visuales */
+                formulario.reset();
+                resetearEstadosCampos();
+            } else {
+                /* ❌ Formspree devolvió un error HTTP */
+                return respuesta.json().then(function (datos) {
+                    const mensajeFormspree = (datos && datos.errors)
+                        ? datos.errors.map(function (e) { return e.message; }).join(', ')
+                        : 'Error al enviar. Intenta de nuevo.';
+                    alertaEnvio.textContent = '❌ ' + mensajeFormspree;
+                    alertaEnvio.className = 'error-envio';
+                });
+            }
+        })
+        .catch(function () {
+            /* ❌ Error de red (sin conexión, CORS, etc.) */
+            alertaEnvio.textContent = '❌ Error de conexión. Verifica tu internet e intenta de nuevo.';
+            alertaEnvio.className = 'error-envio';
+        })
+        .finally(function () {
+            btnEnviar.disabled = false;
+            btnEnviar.textContent = 'Enviar';
 
-        /* Desplazamos suavemente hasta la alerta para que el usuario la vea */
-        alertaEnvio.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
+            /* Desplazamos suavemente hasta la alerta para que el usuario la vea */
+            alertaEnvio.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
 });
