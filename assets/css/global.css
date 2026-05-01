@@ -54,7 +54,14 @@ img {
 /* =========================================================
    UTILIDADES VISUALES REUTILIZABLES
    ========================================================= */
-.subtitulo-seccion,
+
+.logo-navegador {
+      filter: brightness(8) 
+            drop-shadow(0 0 10px #7300ff)
+            drop-shadow(0 0 5px #7300ff);
+}
+   
+   .subtitulo-seccion,
 .etiqueta-hero {
     color: var(--color-neon-cian);
     text-transform: uppercase;

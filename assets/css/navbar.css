@@ -6,21 +6,25 @@
 }
 
 .barra-navegacion {
-    padding: 20px;
+    padding: 8px;
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px var(--color-neon-azul);
+    box-shadow: 0 0 8px var(--color-neon-azul);
 }
 
-.marca-sitio {
-    font-family: var(--fuente-destacada);
-    color: var(--color-neon-cian);
-    font-size: 1.45rem;
-    letter-spacing: 0.08em;
-    text-shadow: 0 0 20px var(--color-neon-rosa) !important;
-    font-weight: bold;
-    filter: drop-shadow(0 0 10px #208cff);
+.logo-full {
+  height: 70px;
+  width: auto;
+  filter: brightness(8) 
+            drop-shadow(0 0 10px #7300ff)
+            drop-shadow(0 0 5px #7300ff);
 }
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
 
 .marca-sitio:hover,
 .marca-sitio:focus {
@@ -31,6 +35,9 @@
     color: var(--color-neon-cian);
     border: 1px solid rgba(88, 247, 255, 0.35);
     box-shadow: var(--sombra-neon-cian);
+    filter: brightness(8) 
+            drop-shadow(0 0 10px #00d9ff)
+            drop-shadow(0 0 5px #00e1ff);
 }
 
 .boton-menu:focus {
