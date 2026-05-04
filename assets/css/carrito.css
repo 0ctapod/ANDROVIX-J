@@ -248,10 +248,11 @@
     padding: 18px 15px;
     font-size: 1.4rem;
     transition: transform 0.5s;
+    padding: 8px;
 }
 
 .compra__boton:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
     color: var(--color-neon-violeta);
     outline: 2px solid var(--color-neon-violeta);
     cursor: pointer;
