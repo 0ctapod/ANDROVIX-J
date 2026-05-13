@@ -25,7 +25,6 @@
 
 body {
     background: url("../img/fondo-registro.png") top /cover fixed;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 main {
@@ -112,7 +111,7 @@ main {
 /* ======= APARTADO FORMULARIO ====== */
 .formulario-contenedor {
     width: 70%;
-    padding: 20px;
+    padding: 32px;
 }
 
 .formulario {
@@ -130,7 +129,7 @@ main {
     letter-spacing: 10px;
     text-align: center;
     text-shadow: 0 0 20px var(--color-e);
-    font-weight: 100;
+    font-weight: 600;
     font-size: 2.5rem;
 }
 
@@ -140,7 +139,7 @@ main {
     justify-content: center;
     gap: 10px;
     margin: 25px auto;
-    width: 70%;
+    width: 80%;
 }
 
 .separador-neon::before,
@@ -189,7 +188,7 @@ main {
     color: var(--color-c);
     font-size: 1.1rem;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 500;
     box-shadow: var(--box-shadow-a);
 }
 
@@ -222,7 +221,6 @@ main {
     border: none;
     padding: 0 20px;
     color: var(--color-c);
-    font-weight: bold;
     font-size: 1.2rem;
 }
 
