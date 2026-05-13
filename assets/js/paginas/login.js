@@ -52,7 +52,7 @@ const campos = {
 // ---------------------------------------------------------
 const expresiones = {
     email:    /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-    password: /^.{8,}$/   // Mínimo 8 caracteres (mismo criterio que registro)
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
 };
 
 // ---------------------------------------------------------
@@ -127,7 +127,7 @@ function validarPassword() {
     }
 
     if (!expresiones.password.test(valor)) {
-        mostrarError(campos.password, "La contraseña debe tener al menos 8 caracteres.");
+        mostrarError(campos.password, "Usa mínimo 8 caracteres, una mayúscula, una minúscula y un número.");
         return false;
     }
 
@@ -220,9 +220,6 @@ function manejarLogin(evento) {
     }
 
     // 3. Comparar contraseña
-    // ⚠️ NOTA ACADÉMICA: En producción NUNCA se guardan contraseñas
-    // en texto plano. Se usan funciones de hash como bcrypt en el backend.
-    // Aquí lo hacemos así solo porque no tenemos backend todavía.
     if (usuarioEncontrado.password !== passwordIngresada) {
         mostrarAlerta("Credenciales incorrectas. Verifica tu email y contraseña.", "danger");
         return;
