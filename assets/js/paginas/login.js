@@ -232,7 +232,7 @@ function manejarLogin(evento) {
 
     // Pequeña pausa para que el usuario lea el mensaje antes de salir
     setTimeout(() => {
-        window.location.href = "catalogo.html";
+        window.location.href = "../index.html";
     }, 1800);
 }
 
@@ -266,13 +266,13 @@ document.querySelectorAll("[data-password-toggle]").forEach(boton => {
 
 /**
  * Si el usuario ya tiene sesión activa, lo mandamos
- * directamente al catálogo sin mostrarle el login.
+ * directamente al inicio sin mostrarle el login.
  */
 function redirigirSiHaySesion() {
     const sesion = sessionStorage.getItem(CLAVE_SESION);
 
     if (sesion) {
-        window.location.href = "catalogo.html";
+        window.location.href = "../index.html";
     }
 }
 

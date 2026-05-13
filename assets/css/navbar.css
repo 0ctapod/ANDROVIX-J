@@ -67,9 +67,27 @@
 }
 
 .icono-accion {
+    position: relative;
     color: #dfd5ff;
     font-size: 1rem;
     transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.badge-carrito {
+    position: absolute;
+    top: -7px;
+    right: -9px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    background: var(--color-neon-rosa);
+    color: #000;
+    font-size: 0.58rem;
+    font-weight: 800;
+    line-height: 16px;
+    border-radius: 999px;
+    text-align: center;
+    pointer-events: none;
 }
 
 .icono-accion:hover,

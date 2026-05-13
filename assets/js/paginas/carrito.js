@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalCarrito = document.getElementById("totalCounter");
     const botonFinalizarCompra = document.getElementById("completePurchase");
     const mensajeCarritoVacio = document.getElementById("emptyCartMessage");
-    const contadorNavbar = document.getElementById("cartCounterNavBar");
 
     let carrito = obtenerCarritoGuardado();
 
@@ -248,8 +247,10 @@ document.addEventListener("DOMContentLoaded", () => {
             maximumFractionDigits: 2
         });
 
+        const contadorNavbar = document.getElementById("cartCounterNavBar");
         if (contadorNavbar) {
             contadorNavbar.textContent = cantidadTotal;
+            contadorNavbar.hidden = cantidadTotal === 0;
         }
     }
 

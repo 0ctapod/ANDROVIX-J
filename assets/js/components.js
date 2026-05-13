@@ -18,6 +18,20 @@ async function cargarComponente(idContenedor, rutaComponente) {
     }
 }
 
+function actualizarContadorCarrito() {
+    const badge = document.getElementById("cartCounterNavBar");
+    if (!badge) return;
+
+    try {
+        const carrito = JSON.parse(localStorage.getItem("androvix_carrito") || "[]");
+        const total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+        badge.textContent = total;
+        badge.hidden = total === 0;
+    } catch {
+        badge.hidden = true;
+    }
+}
+
 function actualizarIconoUsuario() {
     const icono = document.getElementById("icono-usuario");
     if (!icono) return;
@@ -38,5 +52,6 @@ function actualizarIconoUsuario() {
 document.addEventListener("DOMContentLoaded", async () => {
     await cargarComponente("contenedor-navbar", "../componentes/navbar.html");
     actualizarIconoUsuario();
+    actualizarContadorCarrito();
     cargarComponente("contenedor-footer", "../componentes/footer.html");
 });
