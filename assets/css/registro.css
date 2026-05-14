@@ -35,7 +35,7 @@ main {
 
 .contenedor-principal {
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     gap: 30px;
@@ -117,11 +117,45 @@ main {
 .formulario {
     padding: 50px;
     backdrop-filter: blur(15px);    
-    border: 2px solid var(--color-e);
     border-radius: 15px;
-    box-shadow: 
-        0 0 15px 0 var(--color-a), 
-        inset 0 0 15px 0 var(--color-a);
+
+    position: relative;
+    box-shadow: 0 0 10px 0 #ff00ff,
+                inset 0 0 10px 0 #ff00ff;
+}
+
+.formulario::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        #ff00ff,
+        #00ffff,
+        #39ff14,
+        #ff00ff
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: bordeAnimado 5s linear infinite;
+}
+
+@keyframes bordeAnimado {
+
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+
 }
 
 .formulario__titulo {
@@ -287,6 +321,7 @@ main {
 
     .formulario-contenedor {
         width: 100%;
+        padding: 25px 5px;
     }
 
     .formulario {
@@ -424,6 +459,10 @@ body {
     .marca__logo {
         width: 250px;
         margin: 0 auto;
+    }
+
+    .marca__mensaje {
+        font-size: 1.1rem;
     }
 }
 
