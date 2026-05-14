@@ -17,7 +17,7 @@
 .hero__fondo {
     position: absolute;
     inset: 0;
-    background-image: url('../img/Fondo2.png');
+    background-image: url('../img/fondo-index.png');
     background-size: cover;
     background-position: center;
     opacity: 0.35;

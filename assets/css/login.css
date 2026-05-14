@@ -7,6 +7,10 @@
    lo que es diferente o nuevo.
    ========================================================= */
 
+   body {
+       background: url("../img/fondo2-login.png") top /cover fixed;
+   }
+
 /* =========================================================
    ENLACE HACIA REGISTRO
    Aparece debajo del botón para usuarios sin cuenta.

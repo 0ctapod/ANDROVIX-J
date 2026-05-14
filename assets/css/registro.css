@@ -90,9 +90,9 @@ main {
 .marca__mensaje {
     margin-top: 20px;
     color: var(--color-c);
-    letter-spacing: 15px;
+    letter-spacing: clamp(5px, 2vw, 15px);
     line-height: 1.3;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
 }
 
 .marca__mensaje2 {
@@ -126,11 +126,11 @@ main {
 
 .formulario__titulo {
     color: var(--color-c);
-    letter-spacing: 10px;
+    letter-spacing: clamp(4px, 2vw, 10px);
     text-align: center;
     text-shadow: 0 0 20px var(--color-e);
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
 }
 
 .separador-neon {
@@ -186,7 +186,7 @@ main {
     padding: 2px 12px;
     background-color: var(--color-g);
     color: var(--color-c);
-    font-size: 1.1rem;
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
     border-radius: 5px;
     font-weight: 500;
     box-shadow: var(--box-shadow-a);
@@ -221,7 +221,7 @@ main {
     border: none;
     padding: 0 20px;
     color: var(--color-c);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
 }
 
 .input__campo::placeholder {
@@ -238,24 +238,27 @@ main {
 
 .input__boton-enviar {
     margin-top: 50px;
-    padding: 20px;
-    font-size: 1.5rem;
-    border-radius: 15px;
-    letter-spacing: 7px;
+    padding: 18px;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    border-radius: 12px;
+    letter-spacing: clamp(3px, 1.5vw, 7px);
     font-family: inherit;
-    color: var(--color-c);
-    background-color: transparent;
-    border: 2px solid var(--color-e);
-    box-shadow: var(--box-shadow-a);
-    transition: transform 0.5s;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg,#2d075c, var(--color-d));
+    border: 2px solid var(--color-c);
+    box-shadow:
+        0 0 18px rgba(115, 0, 255, 0.45),
+        0 0 36px rgba(220, 0, 110, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
 .input__boton-enviar:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    color: #000000;
-    background: linear-gradient(to right, var(--color-a), var(--color-f));   
-    border: 2px solid var(--color-c); 
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 28px rgba(115, 0, 255, 0.75),
+        0 0 55px rgba(255, 77, 240, 0.45);
 }
 
 
@@ -298,7 +301,7 @@ main {
         margin: auto;
         text-align: center;
     }
-    
+
     .marca-titulo-contenedor {
         justify-content: center;
     }
@@ -308,11 +311,23 @@ main {
     }
 }
 
-@media screen and (max-width: 470px) {
-    .formulario__titulo {
-        font-size: 1.7rem;
+@media screen and (max-width: 576px) {
+    .formulario {
+        padding: 28px 22px;
     }
 
+    .input__apartados i {
+        font-size: 1.2rem;
+        padding: 17px;
+    }
+
+    .input__boton-enviar {
+        margin-top: 30px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 470px) {
     .formulario {
         padding: 20px;
     }
@@ -324,11 +339,6 @@ main {
 
     .input__boton-enviar {
         margin-top: 15px;
-        font-size: 1.1rem;
-    }
-
-    .input__nombre {
-        font-size: 0.9rem;
     }
 
     .input__campo {
@@ -427,17 +437,19 @@ body {
     }
 }
 
+@media screen and (max-width: 576px) {
+    .input {
+        gap: 28px;
+    }
+}
+
 @media screen and (max-width: 470px) {
     .pagina-registro {
         padding-top: 85px;
     }
 
-    .formulario__titulo {
-        letter-spacing: 6px;
-    }
-
     .input {
-        gap: 30px;
+        gap: 25px;
     }
 
     .input__boton-ojo i {

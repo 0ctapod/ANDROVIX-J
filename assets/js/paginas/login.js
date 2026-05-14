@@ -28,6 +28,9 @@ const CLAVE_USUARIOS = "usuariosAndrovix";
  */
 const CLAVE_SESION = "androvix_sesion";
 
+/** Email del administrador — determina la redirección post-login. */
+const EMAIL_ADMIN = "admin.androvixj@email.com";
+
 // ---------------------------------------------------------
 // REFERENCIAS AL DOM
 // ---------------------------------------------------------
@@ -228,11 +231,16 @@ function manejarLogin(evento) {
     // 4. Login exitoso — guardar sesión y redirigir
     guardarSesion(usuarioEncontrado);
 
-    mostrarAlerta(`¡Bienvenido de vuelta, ${usuarioEncontrado.nombreCompleto}! Redirigiendo...`, "success");
+    const esAdmin = usuarioEncontrado.email === EMAIL_ADMIN;
+    const destino  = esAdmin ? "administrador.html" : "catalogo.html";
+    const mensaje  = esAdmin
+        ? `Acceso de administrador concedido. Redirigiendo...`
+        : `¡Bienvenido de vuelta, ${usuarioEncontrado.nombreCompleto}! Redirigiendo...`;
 
-    // Pequeña pausa para que el usuario lea el mensaje antes de salir
+    mostrarAlerta(mensaje, "success");
+
     setTimeout(() => {
-        window.location.href = "../index.html";
+        window.location.href = destino;
     }, 1800);
 }
 
@@ -266,17 +274,40 @@ document.querySelectorAll("[data-password-toggle]").forEach(boton => {
 
 /**
  * Si el usuario ya tiene sesión activa, lo mandamos
- * directamente al inicio sin mostrarle el login.
+ * directamente al catálogo sin mostrarle el login.
  */
 function redirigirSiHaySesion() {
     const sesion = sessionStorage.getItem(CLAVE_SESION);
 
     if (sesion) {
-        window.location.href = "../index.html";
+        window.location.href = "catalogo.html";
     }
 }
 
+// ---------------------------------------------------------
+// USUARIO ADMINISTRADOR — SEED
+// ---------------------------------------------------------
+
+/**
+ * Inserta el usuario admin en localStorage si todavía no existe.
+ * Se ejecuta una sola vez; no sobreescribe si ya está registrado.
+ */
+function sembrarUsuarioAdmin() {
+    const usuarios = obtenerUsuarios();
+    const adminExiste = usuarios.some(u => u.email === EMAIL_ADMIN);
+    if (adminExiste) return;
+
+    usuarios.push({
+        nombreCompleto: "Admin ANDROVIX-J",
+        telefono: "0000000000",
+        email: EMAIL_ADMIN,
+        password: "PaseDeAdministrador100"
+    });
+    localStorage.setItem(CLAVE_USUARIOS, JSON.stringify(usuarios));
+}
+
 // Ejecutamos al cargar la página
+sembrarUsuarioAdmin();
 redirigirSiHaySesion();
 
 formularioLogin.addEventListener("submit", manejarLogin);
