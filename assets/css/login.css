@@ -11,6 +11,10 @@
    ENLACE HACIA REGISTRO
    Aparece debajo del botón para usuarios sin cuenta.
    ========================================================= */
+body {
+    background: url("../img/fondo-login.png") top /cover fixed;
+}
+
 .login__enlace-registro {
     margin-top: 25px;
     text-align: center;
