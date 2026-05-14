@@ -40,7 +40,7 @@ function actualizarIconoUsuario() {
 
     if (sesion) {
         icono.setAttribute("aria-label", "Cerrar sesión");
-        icono.querySelector("i").className = "fa-solid fa-right-from-bracket";
+        icono.querySelector("i").className = "fa-solid fa-right-from-bracket fs-5";
         icono.addEventListener("click", (e) => {
             e.preventDefault();
             sessionStorage.removeItem("androvix_sesion");

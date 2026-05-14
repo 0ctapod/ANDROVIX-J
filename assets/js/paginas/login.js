@@ -232,7 +232,7 @@ function manejarLogin(evento) {
     guardarSesion(usuarioEncontrado);
 
     const esAdmin = usuarioEncontrado.email === EMAIL_ADMIN;
-    const destino  = esAdmin ? "administrador.html" : "catalogo.html";
+    const destino  = esAdmin ? "administrador.html" : "../index.html";
     const mensaje  = esAdmin
         ? `Acceso de administrador concedido. Redirigiendo...`
         : `¡Bienvenido de vuelta, ${usuarioEncontrado.nombreCompleto}! Redirigiendo...`;
@@ -280,7 +280,7 @@ function redirigirSiHaySesion() {
     const sesion = sessionStorage.getItem(CLAVE_SESION);
 
     if (sesion) {
-        window.location.href = "catalogo.html";
+        window.location.href = "../index.html";
     }
 }
 
