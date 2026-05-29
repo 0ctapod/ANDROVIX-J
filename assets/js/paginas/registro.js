@@ -224,7 +224,7 @@ function registrarUsuario(evento) {
     usuariosRegistrados.push(nuevoUsuario);
     guardarUsuariosRegistrados(usuariosRegistrados);
 
-    mostrarAlerta("Registro exitoso. Usuario guardado en localStorage.", "success");
+    mostrarAlerta("Registro exitoso.", "success");
     formularioRegistro.reset();
 
     Object.values(campos).forEach(limpiarEstadoCampo);
